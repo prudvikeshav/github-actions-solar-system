@@ -47,10 +47,9 @@ jobs:
             uses: actions/setup-node@v3
             with:
               node-version: 18
-
-          - name: Install Dependencies
-            run: npm install
+          - run: npm install
           - continue-on-error: true
+          
           - name: Run Code-coverage
             run: npm run code-coverage
 

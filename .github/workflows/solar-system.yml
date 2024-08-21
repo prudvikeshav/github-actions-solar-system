@@ -70,11 +70,11 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ vars.USERNAME }}
-          password: ${{ secrets.DOCKER }}
+          password: ${{ secrets.TOKEN }}
       
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          push: false
+          push: true
           tags: ghcr.io/${{ vars.USERNAME }}/solar-system:${ githubSHA }
 

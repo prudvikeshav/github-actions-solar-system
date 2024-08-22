@@ -12,7 +12,7 @@ env:
   MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}    
 jobs:
     unit-testing:
-        name: Unit Testing
+      - name: Unit Testing
         runs-on: ubuntu-latest
         container: 
            image: 'node:20'
@@ -48,7 +48,7 @@ jobs:
             path: test-results.xml
     code-coverage:
           runs-on: ubuntu-latest
-          name: Cache code-coverage
+        - name: Cache code-coverage
           uses: actions/cache@v3
           with:
              path: ~/.npm
